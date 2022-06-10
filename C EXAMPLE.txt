@@ -1,0 +1,801 @@
+Hi 
+#include <stdio.h>
+int main() {	  printf("Hi Any ONE \n \n I am learning C.\n");  }
+=======================================================================================================
+get string 
+#include<stdio.h>
+#define MAX_LIMIT 256
+
+int main()
+{  /*char *s = malloc(256);                                  // Don't read more than 255 chars
+            printf("enter the string *S : ");     gets(s);   //OR scanf("%255s", s); 
+            printf("%s\n", s);
+     char *p = malloc (strlen(s)+1);                         //new string char from *s
+  */
+   /*char* str1;//a character pointer is created 
+    str1 = (char*)malloc(sizeof(char)*100);//allocating memory to pointer
+    scanf("%[^\n]s",str1);//hence the memory is allocated now we can store the characters in allocated memory space
+    printf("%s",str1);
+    free(str1);//free the memory allocated to the pointer
+  */
+   /* char str[256]; 
+   printf("enter string : ");
+   gets(str);
+   printf("%s", str); */
+
+   /* char str[MAX_LIMIT]; printf("enter your name : ");
+   fgets(str, MAX_LIMIT, stdin);
+   printf("%s", str); */
+
+   /* char str[256]; printf("enter your name : ");
+   scanf("%[^\n]%*c", str);  //scanf("%[a-z,A-Z,0-9,' ']",str);
+   printf("%s", str); */
+
+   /*  char str[256]; printf("enter your name : ");
+    scanf("%[^\n]s",str);
+    printf("%s",str);
+    return 0; */
+
+    char name[50];
+    printf("Enter name : ");
+    //scanf("%s", name); printf("Your name is %s.", name);
+    fgets(name, sizeof(name), stdin);  printf("Name : ");    puts(name);  
+
+}
+=======================================================================================================
+mth
+#include <stdio.h>
+int main() {	
+     int    a = 9;
+     float  b = 10.5757;
+     long double c = 8.12345678901234567890;
+     char myLetter = 'A';
+     int x = 5, y = 6, z = 7;
+     int sum = x + y;
+      x <<= 3;  printf("x <<= 3 === %d \n", x);
+      x >>= 3;  printf("x >>= 3 === %d \n", x);
+      x %= 3;   printf("x  %= 3 === %d \n", x);
+      x &= 3;   printf("x  &= 3 === %d \n", x);
+      x |= 3;   printf("x  |= 3 === %d \n", x);
+      x ^= 3;   printf("x  ^= 3 === %d \n", x);
+      printf("%d ------>>>>>>  ", sum);      printf("%i \n", x * y / z);
+      printf("a =%d \n",a);
+      printf("a =%i \n",a); 
+      printf("a =%f \n",(float)a);
+      printf("b =%f \n",b);
+      printf("c =%Lf \n",c); //double
+      printf("char =%c \n",myLetter);
+      printf("My number is %d and my letter is %c", a, myLetter);
+  }
+=======================================================================================================
+get_int
+#include <stdio.h>
+int main() {	
+       
+        int x=0 ;	printf("Please enter an integer value X = ");     scanf("%i",&x);
+        int y=0 ;       printf("\nPlease enter an integer value Y = ");   scanf("%d",&y);  
+                 printf("Mult x*y = %i \n", x * y  );
+ }
+=======================================================================================================
+if
+#include <stdio.h>
+#include<time.h>
+
+int main() {
+  int time ; printf("Enter Time Now...   ");scanf("%d",&time);
+//time_t now;       time(&now);
+  if (time < 10) {
+    printf("Good morning.\n");
+  } else if (time < 20) {
+    printf("Good day.\n");
+  } else {
+    printf("Good evening.\n");
+  }
+
+  int timee = 9;
+  (timee < 18) ? printf("Good day.\n") : printf("Good evening.\n");
+  return 0;
+}
+======================================================================================================
+switch 
+#include <stdio.h>
+
+int main() {
+  int day = 4;
+  
+  switch (day) {
+  case 6:
+    printf("Today is Saturday");
+    break;
+  case 7:
+    printf("Today is Sunday");
+    break;
+  default:
+    printf("Looking forward to the Weekend");
+  }
+  
+  return 0;
+}
+=======================================================================================================
+Loop-MEOW
+#include <stdio.h>
+int main()
+{
+    int i = 5;
+    while (i < 5)     
+     {    printf("%d\n", i);    i++;  
+     }
+  printf("********************\n");
+    int ii = 5;
+    do {  
+          printf("%d\n", ii);    ii++;  
+    }    while (ii < 5);
+  printf("********************\n");
+
+        for ( int x = 33; x < 128; x++ ) {
+                printf( "%d = %c\n", x, (char)x );
+        }
+         printf("********************\n");
+          /* local variable definition FACTORIAL */
+   int t, j;
+   
+   for(t = 2; t<100; t++) {
+
+      for(j = 2; j <= (t/j); j++) 
+      if(!(t%j)) break; // if factor found, not prime
+      if(j > (t/j)) printf("%d is prime\n", t);
+   }
+        getchar();
+}
+=======================================================================================================
+discount
+#include<stdio.h>
+float discount(float price ,int percent){
+    return price*(100-percent)/100;
+}
+int main(void){
+    float realPrice;  printf("Enter realPrice   :"); scanf("%f",&realPrice);
+    int   percent_off;printf("Enter percent_off :"); scanf("%d",&percent_off);
+
+    printf("Price Sale : %f",discount(realPrice,percent_off));
+}
+=======================================================================================================
+mario-cheak no. enter >0 nested loop
+#include<stdio.h>
+int main(void){
+     int   count;
+    do
+    {
+        printf("Enter count :"); scanf("%d",&count);
+    } while (count < 1);
+    
+    for (int i = 0; i < count; i++)
+    {     for (int j = 0; j < count; j++)
+               {       printf("#");     }   
+     
+      printf("\n");
+    }   
+}
+=======================================================================================================
+memory-casting input ch & string
+#include<stdio.h>
+
+int main(void){
+       char str[50]; printf("Enter str : "); gets(str);puts(str);  //always first
+       char ch; printf("Enter ch :"); scanf("%c", &ch);            //always second
+
+       int   x; printf("Enter X : "); scanf("%i",&x);
+       int   y; printf("Enter y : "); scanf("%i",&y);
+
+        printf("\n\n");
+         printf("char AS int %d\n", (int)ch );
+         printf("X/Y        %lf \n",(double)x/(int)y);
+         printf("X/ch       %.50f \n",(double)x/(int)ch);
+    }
+=======================================================================================================
+average Arrays
+#include<stdio.h>
+int main(void){
+     
+    int x=10;	printf("Please enter no index array = ");     scanf("%i",&x);
+      int no [x];
+     int sum=0, itme;
+    for (int i = 0; i < x; i++) {
+         printf("enter itme in index arraye : ");scanf("%d",&itme);
+         no[i]=itme;
+        sum += no[i];
+    }
+    printf("SUM : %d ______ AVE : %f\n",sum ,sum/(float)x);
+}
+=======================================================================================================
+STRING- SEND STRING TO FUNCTION - COUNT NO. STRING - USE LIB string.h
+#include<stdio.h>
+#include<string.h>
+            int get_length(char str[]){
+            int i =0;
+                while ( str[i] != '\0')
+                {
+                    i++;
+                }
+                return i;
+            }
+int main(void){
+      char str[256];   printf("enter string : ");   gets(str);
+      int i =0;
+      while ( str[i] != '\0')
+      {
+          i++;
+      }
+      
+   printf("%s   No. Char Str : %i \n\t", str,i);        //normal
+   printf("No. Char Str : %i \n%i",get_length(str));    //make func
+   printf("No. Char Str : %i \n%i",strlen(str));        //ues string.h
+}
+=======================================================================================================
+STRING - UPPER &LOWER -UES ctype.h
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main(void){
+      char str[256];   printf("string Befor : ");   gets(str);
+      printf("string After : ");
+   for (int i = 0; i < strlen(str); i++)
+   {   
+       /* if (str[i]  >= 'A'  && str[i]  <= 'Z')  // here work 'a''z'
+       {
+           printf("%c",str[i] +32) ;           // here work -32
+       }
+       else
+       {
+           printf("%c",str[i]);
+       } */
+    printf("%c",toupper(str[i]) );
+     //printf("%c",tolower(str[i]) );
+   }
+          printf(" \n\t");
+}
+=======================================================================================================
+argument      TO WORK MANUAL WRIT IN TERMINAL ./NAME FILE  PRESS ENTER
+#include<stdio.h>
+
+int main(int argc, char const *argv[])
+{
+    // printf("%i \n",argc);
+    // printf("%s \n",argv[1]);
+   /*  if (argc == 2)
+                { printf("hi %s \n", argv[1]);    }
+    else
+                { printf("Hi any one");           } 
+    return 0; */
+     if (argc != 2)
+               { printf("Missing command line Argument\n");  return 1;   } 
+    else
+               { printf("hi %s \n", argv[1]);                return 0;   }
+}  
+   
+
+=======================================================================================================
+// Linear Search in C  ARRAY NO. - FOR ARRAY 2D STRING
+#include<stdio.h>
+#include <string.h>
+int main()
+{
+   /* int array[] = {2, 4, 0, 1, 9, -1};
+   for (int i = 0; i < sizeof(array); i++)
+   {
+       if (array[i] == -1)
+       {
+           printf("found in %i index \n", i+1);
+           return 0;
+       }
+   }
+   printf("Not Found\n");
+    return 0; */
+    char cites[9][10]= {"Tokyo", "Delhi", "Shanghai", "Mumbai", "Beijing","mosul", "Dhaka"};
+   for (int i = 0; i < sizeof(cites); i++)
+   {
+       if (strcmp(cites[i] , "mosul") == 0)
+       {
+           printf("found in %i index \n", i+1);
+           return 0;
+       }
+   }
+   printf("Not Found\n");
+    return 1;
+}
+=======================================================================================================
+//PHON BOOK - Structures 
+#include<stdio.h>
+#include <string.h>
+
+ struct Emploe
+{
+     char name[50]; int phon; int age ; //NAME ARRAY OF CHAR
+};
+
+int main(void)
+{
+    struct Emploe emp[3] ; 
+    strcpy( emp[0].name, "Ahmed");   emp[0].phon = 678678;    emp[0].age = 29;
+    strcpy( emp[1].name, "hamid");   emp[1].phon = 33333333;  emp[1].age = 39;
+    strcpy( emp[2].name, "kaml");    emp[2].phon = 1111111;   emp[2].age = 24;
+
+
+   for (int i = 0; i < 3; i++)
+   {
+       if (strcmp(emp[i].name , "kaml") == 0)
+       {
+           printf("found is %s  \n  %i \n  %i ", emp[i].name,emp[i].phon, emp[i].age);
+           return 0;
+       }
+   }
+   printf("Not Found\n");
+    return 1;
+}
+=======================================================================================================
+//SELECTION SORT ---very bad--- big O(n^2) & big Omega (n^2)
+#include <stdio.h>
+int main() {
+   
+   int arr[] = {20, 12, 10, 15, 2,-2, 0, 11, -9};
+   int n  = sizeof(arr)/sizeof(arr[0]);
+    int min, temp;
+   for (int i = 0; i < (n - 1); i++) {
+      min = i;
+      for (int j = i + 1; j < n; j++) {
+         if (arr[min] > arr[j])
+            min = j;
+      }
+      if (min != i) {
+         temp = arr[i];
+         arr[i] = arr[min];
+         arr[min] = temp;
+      }
+   }
+   for (int i = 0; i < n; i++)
+      printf("%d\t", arr[i]);
+   return 0;
+}
+=======================================================================================================
+Bubble Sort   ---bad--- big O(n^2) & big Omega (n)=one repaet
+#include<stdio.h>
+int main()
+    {
+        int array[100], n, i, j, swap; 
+        printf("Enter number of elements : ");
+        scanf("%d", &n); 
+        printf("Enter %d Numbers  : " ,n); 
+            for(i = 0; i < n; i++)
+            scanf("%d", &array[i]); 
+                for(i = 0 ; i < n - 1; i++)
+                {
+                    for(j = 0 ; j < n-i-1; j++)
+                    {
+                                if(array[j] > array[j+1]) 
+                                {
+                                swap=array[j];
+                                array[j]=array[j+1];
+                                array[j+1]=swap;
+                                }
+                    }
+                } 
+        printf("Sorted Array  : "); 
+        for(i = 0; i < n; i++)
+        printf("  %d \t ", array[i]);
+        return 0;
+    }
+
+=======================================================================================================
+//Recurction
+#include <stdio.h>
+#include <string.h>
+/*void draw(int n) {
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			printf("#");
+		}
+		printf("\n");
+	}
+*/
+void draw(int n) {
+      if (n <= 0)    {   return;  }
+	for (int i = 0; i < n; i++)
+	{		printf("#");
+	}
+		printf("\n");
+                draw( n - 1 );
+	}
+int main() {
+	int height;  printf("height : "); scanf("%d", &height);
+	draw(height);
+
+}
+=======================================================================================================
+/* C program for Merge Sort Worst-case performance O(n log n) Best-case performance Omega (n log n) */
+#include <stdio.h>
+#include <stdlib.h>
+  
+// Merges two subarrays of arr[].
+// First subarray is arr[l..m]
+// Second subarray is arr[m+1..r]
+void merge(int arr[], int l, int m, int r)
+{
+    int i, j, k;
+    int n1 = m - l + 1;
+    int n2 = r - m;
+  
+    /* create temp arrays */
+    int L[n1], R[n2];
+  
+    /* Copy data to temp arrays L[] and R[] */
+    for (i = 0; i < n1; i++)
+        L[i] = arr[l + i];
+    for (j = 0; j < n2; j++)
+        R[j] = arr[m + 1 + j];
+  
+    /* Merge the temp arrays back into arr[l..r]*/
+    i = 0; // Initial index of first subarray
+    j = 0; // Initial index of second subarray
+    k = l; // Initial index of merged subarray
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        }
+        else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+  
+    /* Copy the remaining elements of L[], if there
+    are any */
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+  
+    /* Copy the remaining elements of R[], if there
+    are any */
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+  
+/* l is for left index and r is right index of the
+sub-array of arr to be sorted */
+void mergeSort(int arr[], int l, int r)
+{
+    if (l < r) {
+        // Same as (l+r)/2, but avoids overflow for
+        // large l and h
+        int m = l + (r - l) / 2;
+  
+        // Sort first and second halves
+        mergeSort(arr, l, m);
+        mergeSort(arr, m + 1, r);
+  
+        merge(arr, l, m, r);
+    }
+}
+  
+/* UTILITY FUNCTIONS */
+/* Function to print an array */
+void printArray(int A[], int size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+        printf("%d ", A[i]);
+    printf("\n");
+}
+  
+/* Driver code */
+int main()
+{
+    int arr[] = { 12, 11, 13, 5, 6, 7 };
+    int arr_size = sizeof(arr) / sizeof(arr[0]);
+  
+    printf("Given array is \n");
+    printArray(arr, arr_size);
+  
+    mergeSort(arr, 0, arr_size - 1);
+  
+    printf("\nSorted array is \n");
+    printArray(arr, arr_size);
+    return 0;
+}
+=======================================================================================================
+//Pointer 
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int i  = 90;
+
+    int *t = &i;
+  
+    printf("%p \n" , t);
+    printf("%i \n" , *t);
+    printf("%i \n" , *&i);
+    return 0;
+}
+=======================================================================================================
+
+// typedef char * string  AS IN cs50.h library((string *s  = "hi$";))
+#include <stdio.h>
+int main()
+{
+    char *s  = "hi$";
+  
+    printf("%p \n" , s);
+    printf("%p \n" , &s[0]);
+    printf("%p \n" , &s[1]);
+    printf("%p \n" , &s[2]);
+    printf("==================\n" );
+    printf("%s \n" , s);
+    printf("%s \n" , &s[0]);
+    printf("%s \n" , &s[1]);
+    printf("%s \n" , &s[2]);
+    printf("%s \n" , &s[3]);
+    return 0;
+}
+=======================================================================================================
+//Pointer Arithmetic
+#include <stdio.h>
+int main()
+{
+    char *s  = "hi$";
+  
+    printf("%c \n" , *s);
+    printf("%c \n" , s[0]); ////good access string
+    printf("%c \n" , s[1]);
+    printf("%c \n" , s[2]);
+    printf("%c \n" , s[3]);
+    printf("==================\n" );
+    printf("%c \n" , *s);
+    printf("%c \n" , *(s+1)); ////bad access string
+    printf("%c \n" , *(s+2));
+    printf("%c \n" , *(s+3));
+    printf("==================\n" );
+    printf("||||||||||||||||||||||||||||||||||||||\n" );
+
+    int arr[] = {9,6,8,3};
+    printf("%i \n" , arr[0]);
+    printf("%p \n" , arr);
+    printf("%p \n" , &arr[0]);
+    printf("%i \n" , *arr);
+    printf("%i \n" , *(arr+1));
+    printf("%i \n" , *(arr+2));
+    return 0;
+}
+=======================================================================================================
+//compare string *p by strcmp =compaer all parts s1 with all part s2 ...
+//NOTE:::: if ( s1 == s2) here compaer only s1[0] with s2[0]
+#include <stdio.h>
+#include<string.h>
+int main()
+{     
+    char str1[256];    printf("enter string 1 : ");   gets(str1);
+    char str2[256];    printf("enter string 2 : ");   gets(str2);
+    char *s1 = str1; char *s2 = str2;
+         if ( strcmp(s1 ,s2) == 0)
+         {
+             printf("good\n" );
+         }
+         else
+         {
+             printf("not\n" );
+         }
+
+    return 0;
+}
+=======================================================================================================
+//malloc & free
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<ctype.h>
+  
+ 
+int main(void)
+{ 
+  char *s = malloc(256);                            // Don't read more than 255 chars
+  printf("enter the string *S : ");     gets(s);    //OR scanf("%255s", s); 
+  
+  char *p = malloc (strlen(s)+1);
+
+  //for (int i = 0; i < strlen(s)+1; i++)    {  p[i] = s[i] ;  }
+    if (p == NULL)   {     return 1;    }
+    
+    strcpy( p , s);
+    p[0] = toupper(p[0]); 
+    printf("\tbefor  S : %s   after \t P : %s\n",s,p);
+  free(s);
+  free(p); 
+ }
+=======================================================================================================
+Swap With Pointer
+#include <stdio.h>
+
+void swap(int *x, int *y)
+{
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+  
+int main()
+{
+    int x, y;
+    printf("Enter Value of x ");    scanf("%d", &x);
+    printf("\nEnter Value of y ");  scanf("%d", &y);
+    swap(&x, &y);
+    printf("\nAfter Swapping: x = %d, y = %d", x, y);
+    return 0;
+}
+=======================================================================================================
+scanf UESED WITHOUT gets OR getchar LAB STRING
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+    {
+       // char *s =malloc(90); //90 BAYTE
+        char s[90];     //OR
+        printf("Enter Value of string : ");
+        scanf("%s", s);
+        printf("\nSTRING  = %s \n",s);
+    }
+=======================================================================================================
+WORK WITH FILES
+//mood                 delete            create
+// r  => read            no                no
+// w  => write           yes               yes
+// a  => append          no                yes
+#include<stdio.h>
+int main(void)
+{
+    FILE *myfile = fopen("phonebook.csv","a");
+    char *name  ; printf("NAME   : ");  scanf("%[^\n]s",name);
+    int   phone ; printf("Phone  : ");  scanf("%i",&phone);
+    fprintf(myfile, "%s , %i \n" , name , phone);
+    fclose(myfile);
+}
+=======================================================================================================
+FILE PNG JPG
+#include<stdio.h>
+int main(int argc , char* argv[])
+{
+    if (argc != 2)       {   return 1;    }
+     
+    FILE *file = fopen( argv[1],"a");
+
+    if (file == NULL)    {   return 1;    }
+    
+    unsigned char c[3];
+
+    fread(c , 1 , 3 , file);
+
+    if (c[0] == 0xff && c[1] == 0xd8 && c[2] == 0xff)
+    {
+        printf("yes, possibly\n");
+    }
+    else
+    {
+       printf("no\n");
+    }
+    
+    
+    fclose(file);
+}
+=======================================================================================================
+//realloc //size new laction for new elments & transfer from old array to new array
+//O(n) pass to all elements array thats problem<stdio.h>
+#include<stdlib.h>
+int main( )
+{
+     int *list = malloc (3*sizeof(int));
+     if (list == NULL)     {  return 1;                }
+     list[0] = 1;
+     list[1] = 2;
+     list[2] = 3;
+     //int *tmp =malloc(4*sizeof(int)); //here O(n)
+     int *tmp = realloc(list , 4*sizeof(int));
+     if (tmp == NULL)      {   free(list);   return 1; }
+     //for (int i = 0; i < 3; i++)   { tmp[i] = list[i];     }
+     //     free(list);
+          tmp[3] = 4;
+          list = tmp; 
+          /*here list take all elments tmp from start
+           as pointer that any change on list will change tmp*/
+          for (int i = 0; i < 4; i++)
+          {
+              printf("%i\n", list[i]);
+          }
+            free(list);
+     return 0;
+}
+=======================================================================================================
+//linked list create 3 node  && add frist node
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct node {
+        int    no;          //value
+        struct node *next;  //pointer to address 
+}
+node;  //here node OR x OR t OR z
+int main(void){
+    node *list = NULL;  //start node reffer to NULL
+    node *n = malloc(sizeof(node)); //*n = (new node)reffer to place (size location to value & address)
+  if ( n == NULL)  { return 1;  }   // protect if not size(not have place GETOUT)
+  
+    n->no   = 1;       //OR *(n).no = 1; //ADD VALUE
+    n->next = NULL;    //pointer new node reffer to NULL
+    list    = n;       //point start reffer to new node
+//bulid node2
+       n = malloc(sizeof(node));  
+  if ( n == NULL)  { free(list); return 1;  }   
+    n->no      = 2;        
+    n->next    = NULL;     
+    list->next = n;       
+//bulid node3
+       n = malloc(sizeof(node));  
+  if ( n == NULL)  { free(list->next);free(list); return 1;  }    
+  
+    n->no            = 3;       
+    n->next          = NULL;     
+    list->next->next = n;        
+//ADD NODE IN FIRST
+          n = malloc(sizeof(node));   
+          n->no       = 1000;        //value
+          n->next     = NULL;        // reffer NULL
+          n->next     = list;        // reffer to which reffer start(list)
+          list        = n;           // list reffer to ADD node
+for (node* temp = list; temp != NULL ; temp=temp->next)
+{
+    printf("   %i \n", temp->no);
+ }
+while (list != NULL)
+{
+   node *temp = list->next;  //create temp reffer to next node to keep connect
+   free(list);               //free present node who in queue
+   list = temp;              //now list reffer next node
+ }
+
+
+
+}
+=======================================================================================================
+=======================================================================================================
+=======================================================================================================
+=======================================================================================================
+=======================================================================================================
+by counter could reverse array 3 elements
+// for (int i=2 ; i >= 0; i--) {
+     for (int i = 0; i < MAX; i++) {
+      cout << "Value of var[" << i << "] = ";
+      cout << *ptr[i] << endl;
+   }
+=======================================================================================================
+ //C - Preprocessors
+ #include <stdio.h>
+ #define  message_for(a, b)  \
+    printf(#a " and " #b ": We love you!\n")
+
+ int main() {
+ 
+    printf("File :%s\n", __FILE__ );
+    printf("Date :%s\n", __DATE__ );
+    printf("Time :%s\n", __TIME__ );
+    printf("Line :%d\n", __LINE__ );
+    printf("ANSI :%d\n", __STDC__ ); 
+
+    message_for(Hmdi, Hid);
+    return 0;
+ }
+=======================================================================================================
